@@ -50,13 +50,3 @@ Add more currencies to the dropdown list.
 Enhance the design with animations or effects.
 
 Consider adding currency history or trend charts.
-
-markdown
-Copy
-Edit
-
-### Steps to Add This to Your GitHub Repository:
-1. Go to your GitHub repository at `https://github.com/gitsofpranav/CurrenSwap`.
-2. Click on the `README.md` file. If it doesn't exist, click on "Add file" → "Create new file" and name it `README.md`.
-3. Paste the content above into the file.
-4. Scroll down and click "Commit changes."
