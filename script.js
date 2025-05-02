@@ -45,7 +45,7 @@ btn.addEventListener("click", async (evt) => {
     }
 
     // Correct URL format with from and to currencies
-    const URL = `${BASE_URL}/${fromCurr.value.toLowerCase()}/${toCurr.value.toLowerCase()}.json`;
+    const URL = `${BASE_URL}/${fromCurr.value.toLowerCase()}.json`;
 
     // Fetch exchange rates
     let response = await fetch(URL);
