@@ -60,5 +60,3 @@ Edit
 2. Click on the `README.md` file. If it doesn't exist, click on "Add file" → "Create new file" and name it `README.md`.
 3. Paste the content above into the file.
 4. Scroll down and click "Commit changes."
-
-Now, your project repository will have a well-structured `README.md` file explaining how to use, c
