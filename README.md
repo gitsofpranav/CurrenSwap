@@ -1,18 +1,21 @@
 # CurrenSwap
 
-**CurrenSwap** is a fast and efficient currency converter that provides live exchange rates with flag indicators. It allows users to quickly convert any currency pair in real time, making it ideal for travelers, online shoppers, and those handling global transactions.
+CurrenSwap is a sleek and efficient currency converter that allows users to instantly convert any currency pair with live exchange rates. The app offers real-time updates and visual flag indicators for different currencies. Whether you're traveling, shopping online, or managing global transactions, CurrenSwap provides accurate and quick currency conversion at your fingertips.
 
 ## Features
+- Real-time currency conversion
+- Instant exchange rate updates
+- Visual flags for currencies
+- Simple and intuitive interface
 
-- **Live Exchange Rates:** Get real-time exchange rates for multiple currency pairs.
-- **Flag Indicators:** Visual flags for easy currency identification.
-- **Instant Conversion:** Convert currencies instantly with smooth performance.
-- **User-Friendly:** Simple interface for fast and accurate currency conversion.
+## Technologies Used
+- HTML
+- CSS
+- JavaScript
+- API integration (Currency API)
 
-## Installation
-
-To run **CurrenSwap** locally, follow these steps:
+## How to Run Locally
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/currenswap.git
+   git clone https://github.com/gitsofpranav/CurrenSwap.git
