@@ -1,15 +1,44 @@
 const BASE_URL = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies";
 
 const dropdowns = document.querySelectorAll(".dropdown select");
+const btn = document.querySelector("form button");
 const fromCurr = document.querySelector(".from select");
 const toCurr = document.querySelector(".to select");
 const msg = document.querySelector(".msg");
-const amount = document.querySelector(".amount input");
 
-// Function to update the conversion result
-const updateConversion = async () => {
+// Create dropdown options
+for (let select of dropdowns) {
+    for (currCode in countryList) {
+        let newOption = document.createElement("option");
+        newOption.innerText = currCode;
+        newOption.value = currCode;
+        if (select.name === "from" && currCode === "USD") {
+            newOption.selected = "selected";
+        } else if (select.name === "to" && currCode === "INR") {
+            newOption.selected = "selected";
+        }
+        select.append(newOption);
+    }
+
+    select.addEventListener("change", (evt) => {
+        updateFlag(evt.target);
+    });
+}
+
+// Function to update flag images
+const updateFlag = (element) => {
+    let currCode = element.value;
+    let countryCode = countryList[currCode];
+    let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`;
+    let img = element.parentElement.querySelector("img");
+    img.src = newSrc;
+};
+
+// Button event listener for exchange rate calculation
+btn.addEventListener("click", async (evt) => {
+    evt.preventDefault();
+    let amount = document.querySelector(".amount input");
     let amtVal = amount.value;
-
     if (amtVal === "" || amtVal < 1) {
         amtVal = 1;
         amount.value = "1";
@@ -36,37 +65,4 @@ const updateConversion = async () => {
     // Calculate and display the converted amount
     let finalAmount = (amtVal * rate).toFixed(2);
     msg.innerText = `${amtVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
-};
-
-// Create dropdown options
-for (let select of dropdowns) {
-    for (currCode in countryList) {
-        let newOption = document.createElement("option");
-        newOption.innerText = currCode;
-        newOption.value = currCode;
-        if (select.name === "from" && currCode === "USD") {
-            newOption.selected = "selected";
-        } else if (select.name === "to" && currCode === "INR") {
-            newOption.selected = "selected";
-        }
-        select.append(newOption);
-    }
-
-    // Add event listener for dropdown changes
-    select.addEventListener("change", (evt) => {
-        updateFlag(evt.target);
-        updateConversion();  // Trigger conversion update on change
-    });
-}
-
-// Function to update flag images
-const updateFlag = (element) => {
-    let currCode = element.value;
-    let countryCode = countryList[currCode];
-    let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`;
-    let img = element.parentElement.querySelector("img");
-    img.src = newSrc;
-};
-
-// Initial conversion update on page load
-updateConversion();
+});
